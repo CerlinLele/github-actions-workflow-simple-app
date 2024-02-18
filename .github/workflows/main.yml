@@ -77,7 +77,10 @@ jobs:
 
       # Use kubelogin to configure your kubeconfig for Azure auth
       - name: Set up kubelogin for non-interactive login
-        uses: Azure/use-kubelogin@v1.2
+        uses: Azure/use-kubelogin@v1
+        with:
+          # The version of kubelogin to use. Defaults to the latest version.
+          kubelogin-version: v0.0.25
 
       # Retrieves your Azure Kubernetes Service cluster's kubeconfig file
       - name: Get K8s context
